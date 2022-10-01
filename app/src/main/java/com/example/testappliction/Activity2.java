@@ -2,47 +2,51 @@ package com.example.testappliction;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ProgressBar;
+import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
-public class Activity2 extends AppCompatActivity {
-    private int prog=0;
-    private ProgressBar progressBar;
-    TextView age =findViewById(R.id.age);
+public class Activity2 extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_2);
-        Button button_inc = (Button) findViewById(R.id.button_Increase);
-        Button button_dec =(Button) findViewById(R.id.button_decrease);
-        updateProgressBar();
-        button_inc.setOnClickListener(new View.OnClickListener() {
+        Spinner spinner = findViewById(R.id.spinner);
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,R.array.name, android.R.layout.simple_spinner_item);
+        adapter.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line);
+        spinner.setAdapter(adapter);
+        spinner.setOnItemSelectedListener(this);
+        Button next_button =(Button)findViewById(R.id.button2);
+        next_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(prog<=90){
-                    prog=prog+10;
-                    updateProgressBar();
-                }
-            }
-        });
-        button_dec.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if(prog>=10){
-                    prog=prog-10;
-                    updateProgressBar();
-
-                }
+               openActivity3();
             }
         });
     }
-    public void updateProgressBar(){
-        progressBar.setProgress(prog);
-        age.setText(prog);
+
+    void openActivity3(){
+        Intent intent = new Intent(this,Activity3.class);
+        startActivity(intent);
+    }
+
+    @Override
+    public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+        String text = adapterView.getItemAtPosition(i).toString();
+        Toast.makeText(adapterView.getContext(),text,Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> adapterView) {
+
     }
 }

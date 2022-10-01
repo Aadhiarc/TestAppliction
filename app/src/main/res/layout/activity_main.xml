@@ -64,7 +64,6 @@
         app:layout_constraintTop_toBottomOf="@+id/userName"
         app:layout_constraintVertical_bias="0.0"
         tools:layout_editor_absoluteX="60dp"
-        android:text="password"
         android:textSize="30dp"
         android:textColor="@color/white"
         android:background="@drawable/dyn"

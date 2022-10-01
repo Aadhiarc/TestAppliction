@@ -6,50 +6,27 @@
     android:layout_height="match_parent"
     android:accessibilityLiveRegion="none"
     android:background="@drawable/gradient1"
-    tools:context=".Activity2">
+    tools:context=".Activity2" >
 
-    <ProgressBar
-        android:id="@+id/progressBar"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:indeterminateOnly="false"
-        android:progressDrawable="@drawable/circle"
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_marginBottom="180dp"
+        android:text="Next"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/button2"
         app:layout_constraintTop_toTopOf="parent"
-        tools:progress="50" />
-
-    <TextView
-        android:id="@+id/age"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:textColor="@color/white"
-        app:layout_constraintBottom_toBottomOf="@+id/progressBar"
-        app:layout_constraintEnd_toEndOf="@+id/progressBar"
-        app:layout_constraintStart_toStartOf="@+id/progressBar"
-        app:layout_constraintTop_toTopOf="@+id/progressBar"
-        tools:text="1" />
-
-    <Button
-        android:id="@+id/button_decrease"
-        android:layout_width="50dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="@+id/progressBar"
-        tools:layout_editor_absoluteY="481dp"
-        android:text="-"
-        android:textSize="30dp"
-        tools:ignore="MissingConstraints" />
-
-    <Button
-        android:id="@+id/button_Increase"
-        android:layout_width="50dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="@+id/progressBar"
-        tools:layout_editor_absoluteY="481dp"
-        android:text="+"
-        android:textSize="30dp"
-        tools:ignore="MissingConstraints" />
-
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="1dp"
+        />
 </androidx.constraintlayout.widget.ConstraintLayout>

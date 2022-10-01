@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">TestAppliction</string>
+    <string-array name="name">
+        <item>aadhi</item>
+        <item>jeeva</item>
+        <item>raj</item>
+    </string-array>
 </resources>
